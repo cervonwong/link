@@ -87,7 +87,7 @@
       line-height: 1.15;
       text-align: center;
       margin: 0 1rem 0;
-      animation: h2In 1.4s ease-out;
+      animation: h2In 0.8s ease-out;
     }
 
     @keyframes h2In {
@@ -96,15 +96,10 @@
         transform: translate(0, 1rem);
         color: rgba(0, 0, 0, 0%);
       }
-      15% {
+      20% {
         font-variation-settings: "wght" 300, "SOFT" 50, "WONK" 1;
         transform: translate(0, 1rem);
         color: rgba(0, 0, 0, 0%);
-      }
-      50% {
-        font-variation-settings: "wght" 400, "SOFT" 50, "WONK" 1;
-        transform: translate(0, 0);
-        color: rgba(0, 0, 0, 80%);
       }
       100% {
         font-variation-settings: "wght" 500, "SOFT" 50, "WONK" 1;
@@ -331,10 +326,10 @@
       background: #F7EFC8;
       /* flex to expand to body height.*/
       flex: 1;
-      width: 105%;
+      width: 100vw;
       align-items: center;
       position: relative;
-      margin-top: 4.5rem;
+      margin-top: 5rem;
       /*padding-bottom: 3rem;*/
     }
 
@@ -357,8 +352,20 @@
       background-color: #F7EFC8;
       width: 100%;
       border-radius: 50%;
-      top: -2rem;
-      height: 4rem;
+      top: -3rem;
+      height: 6rem;
+      animation: navBeforeIn 1.0s ease-out;
+    }
+
+    @keyframes navBeforeIn {
+      0% {
+        top: 0;
+        height: 0;
+      }
+      100% {
+        top: -3rem;
+        height: 6rem;
+      }
     }
 
     div.pole {
