@@ -21,45 +21,113 @@
 
   <meta name="theme-color" content="#fafafa">
 
+  <!--  Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!--  <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@500..800&family=Fraunces:opsz,wght@9..144,500;9..144,400&display=swap" rel="stylesheet">-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@500..800&family=Fraunces:opsz,wght@9..144,400;9..144,500&display=swap" rel="stylesheet">
   <style>
-    html, body {
-      height: 100%;
+    html {
+      background: #FAF6DB;
     }
     main {
+      margin: 2rem 0 2rem 0;
       display: flex;
-      height: 100%;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
     }
-    div {
+    h1 {
+      font-family: 'Fraunces', serif;
+      font-variation-settings: "wght" 500, "soft" 50, "wonk" 1;
+      font-size: 1rem;
       text-align: center;
+      margin-bottom: 0.3rem;
+    }
+    h2 {
+      font-family: 'Fraunces', serif;
+      font-variation-settings: "wght" 500, "soft" 50, "wonk" 1;
+      font-size: 3rem;
+      line-height: 1.15;
+      text-align: center;
+      margin-top: 0;
+    }
+    .signs {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 0;
+    }
+    a {
+      display: flex;
+      align-items: center;
+      font-family: 'Commissioner', sans-serif;
+      font-variation-settings: "wght" 500;
+      font-size: 1.2rem;
+      line-height: 1.5rem;
+      color: black;
+      text-decoration: none;
+      padding: 2rem 2.3rem;
+      height: 3rem;
+      width: 8rem;
+      background-image: url("../img/sign_right_200x74.svg");
+      background-repeat: no-repeat;
+      text-align: start;
+      background-size: 100% 100%;
+      transition: all 0.2s ease-in-out;
+      transform: rotate(-2deg) translate(0, 0);
+      filter: drop-shadow(2px 3px 0px black);
+    }
+    a:hover {
+      transition: all 0.2s ease-in-out;
+      font-variation-settings: "wght" 700;
+      transform: rotate(-2deg) translate(-3px, -2px) scale(102%);
+      filter: drop-shadow(5px 5px 0px black);
+    }
+    a:active {
+      transition: all 0.1s ease-in-out;
+      font-variation-settings: "wght" 700;
+      transform: rotate(-2deg) translate(0px, 0px);
+      filter: drop-shadow(0px 0px 0px black);
     }
   </style>
 </head>
 
 <body>
-
-  <!-- Add your site or application content here -->
   <main>
-    <div>
-      <h1>A list of my site links</h1>
-      <p><a href="https://cervonwong.com" target="_blank">Visit my portfolio</a></p>
-      <p><a href="https://playground.cervonwong.com" target="_blank">Visit my playground</a></p>
-      <p><a href="https://sg.linkedin.com/in/cervonwong" target="_blank">Visit my LinkedIn</a></p>
-      <p><a href="https://github.com/cervonwong" target="_blank">Visit my GitHub</a></p>
-      <p><a href="https://cervonwong.com/resume" target="_blank">View my CS résumé</a></p>
+      <h1>Hi, I'm Cervon Wong</h1>
+      <h2>Where would you like to go?</h2>
+      <div class="signs">
+        <a href="https://cervonwong.com" target="_blank">Professional<br>portfolio</a>
+        <a href="https://playground.cervonwong.com" target="_blank"><span>My house</span></a>
+        <a href="https://sg.linkedin.com/in/cervonwong" target="_blank">LinkedIn<br>profile</a>
+        <a href="https://github.com/cervonwong" target="_blank">GitHub<br>profile</a>
+        <a href="https://cervonwong.com/resume" target="_blank">My résumé</a>
     </div>
   </main>
   <script src="../js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="../js/plugins.js"></script>
   <script src="../js/main.js"></script>
 
-<!--  &lt;!&ndash; Google Analytics: change UA-XXXXX-Y to be your site's ID. &ndash;&gt;-->
-<!--  <script>-->
-<!--    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;-->
-<!--    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')-->
-<!--  </script>-->
-<!--  <script src="https://www.google-analytics.com/analytics.js" async></script>-->
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MT9JG29P26"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-MT9JG29P26');
+  </script>
 </body>
 
 </html>
