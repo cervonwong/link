@@ -55,6 +55,8 @@
     body {
       height: 100%;
       display: flex;
+      /* Prevent weird horizontal scrolling because content drawn under scrollbar. Might need to remove when making responsive design.  */
+      overflow-x: hidden;
     }
 
     main {
