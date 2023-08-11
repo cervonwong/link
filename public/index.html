@@ -210,23 +210,23 @@
       filter: drop-shadow(0px 0px 0px black);
     }
 
-    a.sign1 {
+    a.link1 {
       animation: link1In 1s ease-out;
     }
 
-    a.sign2 {
+    a.link2 {
       animation: link2In 1.1s ease-out;
     }
 
-    a.sign3 {
+    a.link3 {
       animation: link3In 1.2s ease-out;
     }
 
-    a.sign4 {
+    a.link4 {
       animation: link4In 1.3s ease-out;
     }
 
-    a.sign5 {
+    a.link5 {
       animation: link5In 1.4s ease-out;
     }
 
@@ -331,6 +331,17 @@
       position: relative;
       margin-top: 5rem;
       /*padding-bottom: 3rem;*/
+      animation: navIn 1.5s ease-in-out;
+      animation-fill-mode: both;
+    }
+
+    @keyframes navIn {
+      0% {
+        transform: translate(0, 6rem);
+      }
+      100% {
+        transform: translate(0, 0);
+      }
     }
 
     /* Gradient fade of pole*/
@@ -423,6 +434,49 @@
       color: #F5A700;
     }
 
+    .pulse1 {
+      animation: pulse 6s ease-in-out 2s;
+      animation-iteration-count: infinite;
+    }
+
+    .pulse2 {
+      animation: pulse 6s ease-in-out 2.2s;
+      animation-iteration-count: infinite;
+    }
+
+    .pulse3 {
+      animation: pulse 6s ease-in-out 2.4s;
+      animation-iteration-count: infinite;
+    }
+
+    .pulse4 {
+      animation: pulse 6s ease-in-out 2.6s;
+      animation-iteration-count: infinite;
+    }
+
+    .pulse5 {
+      animation: pulse 6s ease-in-out 2.8s;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      45% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.06);
+      }
+      55% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
   </style>
 </head>
 
@@ -433,32 +487,32 @@
     <nav>
       <div class="pole"></div>
       <ul class="signs">
-        <li><a class="sign_right sign1" href="https://cervonwong.com" target="_blank">
+        <li class="pulse1"><a class="sign_right link1" href="https://cervonwong.com" target="_blank">
           <span class="sign_text">
             Professional<br>portfolio
           </span>
           <span class="sign_icon material-symbols-outlined">
             north_east
           </span></a></li>
-        <li><a class="sign_left sign2" href="https://playground.cervonwong.com" target="_blank"><span class="sign_text">
+        <li class="pulse2"><a class="sign_left link2" href="https://playground.cervonwong.com" target="_blank"><span class="sign_text">
             My house
           </span>
           <span class="sign_icon material-symbols-outlined">
             arrow_top_left
           </span></a></li>
-        <li><a class="sign_right sign3" href="https://sg.linkedin.com/in/cervonwong" target="_blank"><span class="sign_text">
+        <li class="pulse3"><a class="sign_right link3" href="https://sg.linkedin.com/in/cervonwong" target="_blank"><span class="sign_text">
             LinkedIn<br>profile
           </span>
           <span class="sign_icon material-symbols-outlined">
             east
           </span></a></li>
-        <li><a class="sign_left sign4" href="https://github.com/cervonwong" target="_blank"><span class="sign_text">
+        <li class="pulse4"><a class="sign_left link4" href="https://github.com/cervonwong" target="_blank"><span class="sign_text">
             GitHub<br>profile
           </span>
           <span class="sign_icon material-symbols-outlined">
             north_west
           </span></a></li>
-        <li><a class="sign_right sign5" href="https://cervonwong.com/resume" target="_blank"><span class="sign_text">
+        <li class="pulse5"><a class="sign_right link5" href="https://cervonwong.com/resume" target="_blank"><span class="sign_text">
             My résumé
           </span>
           <span class="sign_icon material-symbols-outlined">
