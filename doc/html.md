@@ -117,7 +117,7 @@ It's linked to from the HTML as follows:
 
 ```html
 
-<link rel="manifest" href="public/site.webmanifest">
+<link rel="manifest" href="src/site.webmanifest">
 ```
 
 Our
@@ -167,10 +167,10 @@ it before the other scripts in the bottom of the page:
 
 ```html
 
-<script src="public/js/vendor/modernizr-3.10.0.min.js"></script>
+<script src="src/js/vendor/modernizr-3.10.0.min.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js"></script>
-<script src="public/js/plugins.js"></script>
-<script src="public/js/main.js"></script>
+<script src="src/js/plugins.js"></script>
+<script src="src/js/main.js"></script>
 </body>
 ```
 
