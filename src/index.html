@@ -597,7 +597,7 @@
     }
 
     @media (min-width: 50rem) {
-      .background-circle {
+      #background-circle {
         content: "";
         position: fixed;
         z-index: -1;
@@ -611,7 +611,6 @@
       }
     }
 
-
     @keyframes backgroundCircleIn {
       0% {
         transform: scale(0.01);
@@ -620,13 +619,12 @@
         transform: scale(1.0);
       }
     }
-
   </style>
 </head>
 
 <body>
   <main>
-    <div class="background-circle"></div>
+    <div id="background-circle"></div>
     <div class="heading-group">
       <h1>Hi, I'm Cervon Wong</h1>
       <h2>Where&nbsp;would you&nbsp;like&nbsp;to&nbsp;go?</h2>
@@ -677,6 +675,29 @@
       </ul>
     </nav>
   </main>
+
+  <script>
+    var circle = document.getElementById("background-circle");
+    var isExpanded = false;
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY !== 0) {
+        if (!isExpanded) {
+          circle.animate(
+            [{transform: "scale(1.0)"}, {transform: "scale(3.0)"}],
+            {duration: 1000, iterations: 1, easing: "ease", fill: "forwards", });
+          isExpanded = true;
+        }
+      } else {
+        if (isExpanded) {
+          circle.animate(
+            [{transform: "scale(3.0)"}, {transform: "scale(1.0)"}],
+            {duration: 1000, iterations: 1, easing: "ease", fill: "forwards", composite: "replace"});
+          isExpanded = false;
+        }
+      }
+    }, false);
+  </script>
 
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
