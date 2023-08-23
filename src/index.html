@@ -775,28 +775,36 @@
   <script>
     var circle = document.getElementById("background-circle");
     var isExpanded = false;
+    var isAnimating = false;
 
     window.addEventListener('scroll', () => {
+      if (isAnimating) return;
       if (window.scrollY !== 0) {
-        if (!isExpanded) {
-          circle.animate(
-            [{transform: "scale(1.0)"}, {transform: "scale(3.0)"}],
-            {duration: 600, iterations: 1, easing: "cubic-bezier(0.60, 0, 1, 1)", fill: "forwards",});
-          isExpanded = true;
-        }
+        if (isExpanded) return;
+        isAnimating = true;
+        circle.animate(
+          [{transform: "scale(1.0)"}, {transform: "scale(3.0)"}],
+          {duration: 600, iterations: 1, easing: "cubic-bezier(0.60, 0, 1, 1)", fill: "forwards",}
+        ).onfinish = (event) => {
+          isAnimating = false;
+        };
+        isExpanded = true;
       } else {
-        if (isExpanded) {
-          circle.animate(
-            [{transform: "scale(3.0)"}, {transform: "scale(1.0)"}],
-            {
-              duration: 1000,
-              iterations: 1,
-              easing: "cubic-bezier(0.20, 0, 0.40, 1)",
-              fill: "forwards",
-              composite: "replace"
-            });
-          isExpanded = false;
-        }
+        if (!isExpanded) return;
+        isAnimating = true;
+        var animation = circle.animate(
+          [{transform: "scale(3.0)"}, {transform: "scale(1.0)"}],
+          {
+            duration: 1000,
+            iterations: 1,
+            easing: "cubic-bezier(0.20, 0, 0.40, 1)",
+            fill: "forwards",
+            composite: "replace"
+          }
+        ).onfinish = (event) => {
+          isAnimating = false;
+        };
+        isExpanded = false;
       }
     }, false);
   </script>
