@@ -83,7 +83,7 @@
       align-items: center;
       position: relative;
       margin-top: 5rem;
-      animation: navInMobile 1.5s ease-in-out;
+      animation: navIn 1.5s ease-in-out;
       animation-fill-mode: both;
     }
 
@@ -105,7 +105,8 @@
         right: 0;
         bottom: 0;
         width: 60%;
-        animation: navInDesktop 1.5s ease-in-out;
+        animation: navIn 1.5s ease-in-out;
+        animation-delay: 0.6s;
         animation-fill-mode: both;
       }
 
@@ -117,7 +118,7 @@
       }
     }
 
-    @keyframes navInMobile {
+    @keyframes navIn {
       0% {
         transform: translate(0, 6rem);
       }
@@ -127,7 +128,7 @@
     }
 
     @media (min-width: 50rem) {
-      @keyframes navInDesktop {
+      @keyframes navIn {
         0% {
           transform: translate(0, 6rem) scale(0.88);
         }
@@ -138,7 +139,7 @@
     }
 
     @media (min-width: 60rem) {
-      @keyframes navInDesktop {
+      @keyframes navIn {
         0% {
           transform: translate(0, 6rem) scale(0.96);
         }
@@ -149,7 +150,7 @@
     }
 
     @media (min-width: 70rem) {
-      @keyframes navInDesktop {
+      @keyframes navIn {
         0% {
           transform: translate(0, 6rem) scale(1.02);
         }
@@ -160,12 +161,45 @@
     }
 
     @media (min-width: 75rem) {
-      @keyframes navInDesktop {
+      @keyframes navIn {
         0% {
           transform: translate(0, 6rem) scale(1.1);
         }
         100% {
           transform: translate(0, 0) scale(1.1);
+        }
+      }
+    }
+
+    @media (min-width: 80rem) {
+      @keyframes navIn {
+        0% {
+          transform: translate(0, 6rem) scale(1.16);
+        }
+        100% {
+          transform: translate(0, 0) scale(1.16);
+        }
+      }
+    }
+
+    @media (min-width: 85rem) {
+      @keyframes navIn {
+        0% {
+          transform: translate(0, 6rem) scale(1.22);
+        }
+        100% {
+          transform: translate(0, 0) scale(1.22);
+        }
+      }
+    }
+
+    @media (min-width: 90rem) {
+      @keyframes navIn {
+        0% {
+          transform: translate(0, 6rem) scale(1.29);
+        }
+        100% {
+          transform: translate(0, 0) scale(1.29);
         }
       }
     }
@@ -178,12 +212,15 @@
       text-align: center;
       margin: 0 1rem 0.2rem;
       animation: h1In 0.8s ease-out;
+      animation-fill-mode: both;
     }
 
     @media (min-width: 50rem) {
       h1 {
-        font-size: 2vw;
-        text-align: start;
+        font-weight: 400;
+        font-variation-settings: "wght" 400, "SOFT" 50, "WONK" 1;
+        font-size: 1.8vw;
+        text-align: left;
         margin: 1rem 0;
       }
     }
@@ -194,15 +231,25 @@
         transform: translate(0, 1rem);
         color: rgba(0, 0, 0, 0%);
       }
-      50% {
-        font-variation-settings: "wght" 400, "SOFT" 50, "WONK" 1;
-        transform: translate(0, 0rem);
-        color: rgba(0, 0, 0, 80%);
-      }
       100% {
         font-variation-settings: "wght" 500, "SOFT" 50, "WONK" 1;
         transform: translate(0, 0);
         color: rgba(0, 0, 0, 100%);
+      }
+    }
+
+    @media (min-width: 50rem) {
+      @keyframes h1In {
+        0% {
+          font-variation-settings: "wght" 300, "SOFT" 50, "WONK" 1;
+          transform: translate(0, 5rem);
+          color: rgba(0, 0, 0, 0%);
+        }
+        100% {
+          font-variation-settings: "wght" 400, "SOFT" 50, "WONK" 1;
+          transform: translate(0, 0);
+          color: rgba(0, 0, 0, 100%);
+        }
       }
     }
 
@@ -215,6 +262,7 @@
       text-align: center;
       margin: 0 1rem 0;
       animation: h2In 0.8s ease-out;
+      animation-fill-mode: both;
     }
 
     @media (min-width: 50rem) {
@@ -222,6 +270,9 @@
         font-size: 7vw;
         margin: 0;
         text-align: start;
+        animation: h2In 1.2s ease-out;
+        animation-delay: 0.2s;
+        animation-fill-mode: both;
       }
     }
 
@@ -240,6 +291,21 @@
         font-variation-settings: "wght" 500, "SOFT" 50, "WONK" 1;
         transform: translate(0, 0);
         color: rgba(0, 0, 0, 100%);
+      }
+    }
+
+    @media (min-width: 50rem) {
+      @keyframes h2In {
+        0% {
+          font-variation-settings: "wght" 300, "SOFT" 50, "WONK" 1;
+          transform: translate(0, 5rem);
+          color: rgba(0, 0, 0, 0%);
+        }
+        100% {
+          font-variation-settings: "wght" 500, "SOFT" 50, "WONK" 1;
+          transform: translate(0, 0);
+          color: rgba(0, 0, 0, 100%);
+        }
       }
     }
 
@@ -363,6 +429,13 @@
 
     a.link5 {
       animation: link5In 1.4s ease-out;
+    }
+
+    @media (min-width: 50rem) {
+      a.link1, a.link2, a.link3, a.link4, a.link5 {
+        animation-delay: 0.4s;
+        animation-fill-mode: backwards;
+      }
     }
 
     @keyframes link1In {
@@ -513,6 +586,37 @@
       animation-fill-mode: both;
     }
 
+    @media (min-width: 50rem) {
+      div.pole {
+        animation: poleIn 1.0s ease-out 0.8s;
+        animation-fill-mode: both;
+      }
+    }
+
+    @keyframes poleIn {
+      0% {
+        transform: translate(0, 2rem);
+        filter: opacity(0%);
+      }
+      100% {
+        transform: translate(0, 0);
+        filter: opacity(100%);
+      }
+    }
+
+    @media (min-width: 50rem) {
+      @keyframes poleIn {
+        0% {
+          transform: translate(0, 4rem);
+          filter: opacity(0%);
+        }
+        100% {
+          transform: translate(0, 0);
+          filter: opacity(100%);
+        }
+      }
+    }
+
     div.pole:before {
       content: "";
       position: absolute;
@@ -526,17 +630,6 @@
       left: 0;
       right: 0;
       margin-left: -0.5rem;
-    }
-
-    @keyframes poleIn {
-      0% {
-        transform: translate(0, 2rem);
-        filter: opacity(0%);
-      }
-      100% {
-        transform: translate(0, 0);
-        filter: opacity(100%);
-      }
     }
 
     .sign_icon.material-symbols-outlined {
@@ -554,27 +647,27 @@
     }
 
     .pulse1 {
-      animation: pulse 6s ease-in-out 2s;
+      animation: pulse 14s ease-in-out 2s;
       animation-iteration-count: infinite;
     }
 
     .pulse2 {
-      animation: pulse 6s ease-in-out 2.2s;
+      animation: pulse 14s ease-in-out 2.2s;
       animation-iteration-count: infinite;
     }
 
     .pulse3 {
-      animation: pulse 6s ease-in-out 2.4s;
+      animation: pulse 14s ease-in-out 2.4s;
       animation-iteration-count: infinite;
     }
 
     .pulse4 {
-      animation: pulse 6s ease-in-out 2.6s;
+      animation: pulse 14s ease-in-out 2.6s;
       animation-iteration-count: infinite;
     }
 
     .pulse5 {
-      animation: pulse 6s ease-in-out 2.8s;
+      animation: pulse 14s ease-in-out 2.8s;
       animation-iteration-count: infinite;
     }
 
@@ -582,13 +675,13 @@
       0% {
         transform: scale(1);
       }
-      45% {
+      47% {
         transform: scale(1);
       }
       50% {
-        transform: scale(1.06);
+        transform: scale(1.05);
       }
-      55% {
+      53% {
         transform: scale(1);
       }
       100% {
@@ -608,6 +701,8 @@
         height: 74vw;
         width: 74vw;
         animation: backgroundCircleIn 1.5s ease;
+        animation-delay: 0.4s;
+        animation-fill-mode: both;
       }
     }
 
@@ -676,6 +771,7 @@
     </nav>
   </main>
 
+  <!-- For desktop screens, animate circle expanding and retracting on scroll. -->
   <script>
     var circle = document.getElementById("background-circle");
     var isExpanded = false;
@@ -685,14 +781,20 @@
         if (!isExpanded) {
           circle.animate(
             [{transform: "scale(1.0)"}, {transform: "scale(3.0)"}],
-            {duration: 1000, iterations: 1, easing: "ease", fill: "forwards", });
+            {duration: 600, iterations: 1, easing: "cubic-bezier(0.60, 0, 1, 1)", fill: "forwards",});
           isExpanded = true;
         }
       } else {
         if (isExpanded) {
           circle.animate(
             [{transform: "scale(3.0)"}, {transform: "scale(1.0)"}],
-            {duration: 1000, iterations: 1, easing: "ease", fill: "forwards", composite: "replace"});
+            {
+              duration: 1000,
+              iterations: 1,
+              easing: "cubic-bezier(0.20, 0, 0.40, 1)",
+              fill: "forwards",
+              composite: "replace"
+            });
           isExpanded = false;
         }
       }
