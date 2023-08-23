@@ -66,6 +66,108 @@
       align-items: center;
       flex: 1;
       padding: 2rem 0 0 0;
+      width: 100%;
+      /*height: 100%;*/
+    }
+
+    .heading-group {
+    }
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      background: #F7EFC8;
+      /* flex to expand to body height.*/
+      flex: 1;
+      width: 100vw;
+      align-items: center;
+      position: relative;
+      margin-top: 5rem;
+      animation: navInMobile 1.5s ease-in-out;
+      animation-fill-mode: both;
+    }
+
+    @media (min-width: 50rem) {
+      main {
+        display: block;
+        align-items: start;
+      }
+
+      .heading-group {
+        position: fixed;
+        width: 50%;
+        margin: 0 3rem 0 2rem;
+      }
+
+      nav {
+        background-color: transparent;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 60%;
+        animation: navInDesktop 1.5s ease-in-out;
+        animation-fill-mode: both;
+      }
+
+      @media (max-height: 40rem) {
+        nav {
+          top: 0;
+          bottom: auto;
+        }
+      }
+    }
+
+    @keyframes navInMobile {
+      0% {
+        transform: translate(0, 6rem);
+      }
+      100% {
+        transform: translate(0, 0);
+      }
+    }
+
+    @media (min-width: 50rem) {
+      @keyframes navInDesktop {
+        0% {
+          transform: translate(0, 6rem) scale(0.88);
+        }
+        100% {
+          transform: translate(0, 0) scale(0.88);
+        }
+      }
+    }
+
+    @media (min-width: 60rem) {
+      @keyframes navInDesktop {
+        0% {
+          transform: translate(0, 6rem) scale(0.96);
+        }
+        100% {
+          transform: translate(0, 0) scale(0.96);
+        }
+      }
+    }
+
+    @media (min-width: 70rem) {
+      @keyframes navInDesktop {
+        0% {
+          transform: translate(0, 6rem) scale(1.02);
+        }
+        100% {
+          transform: translate(0, 0) scale(1.02);
+        }
+      }
+    }
+
+    @media (min-width: 75rem) {
+      @keyframes navInDesktop {
+        0% {
+          transform: translate(0, 6rem) scale(1.1);
+        }
+        100% {
+          transform: translate(0, 0) scale(1.1);
+        }
+      }
     }
 
     h1 {
@@ -76,6 +178,14 @@
       text-align: center;
       margin: 0 1rem 0.2rem;
       animation: h1In 0.8s ease-out;
+    }
+
+    @media (min-width: 50rem) {
+      h1 {
+        font-size: 2vw;
+        text-align: start;
+        margin: 1rem 0;
+      }
     }
 
     @keyframes h1In {
@@ -105,6 +215,14 @@
       text-align: center;
       margin: 0 1rem 0;
       animation: h2In 0.8s ease-out;
+    }
+
+    @media (min-width: 50rem) {
+      h2 {
+        font-size: 7vw;
+        margin: 0;
+        text-align: start;
+      }
     }
 
     @keyframes h2In {
@@ -337,55 +455,39 @@
       }
     }
 
-    nav {
-      display: flex;
-      flex-direction: column;
-      background: #F7EFC8;
-      /* flex to expand to body height.*/
-      flex: 1;
-      width: 100vw;
-      align-items: center;
-      position: relative;
-      margin-top: 5rem;
-      /*padding-bottom: 3rem;*/
-      animation: navIn 1.5s ease-in-out;
-      animation-fill-mode: both;
-    }
-
-    @keyframes navIn {
-      0% {
-        transform: translate(0, 6rem);
-      }
-      100% {
-        transform: translate(0, 0);
-      }
-    }
-
     /* Gradient fade of pole*/
     nav:after {
       content: "";
       z-index: 4;
-      width: 100%;
+      width: 10%;
       position: relative;
-      bottom: 0;
-      background-image: linear-gradient(rgba(247, 239, 200, 0%), rgba(247, 239, 200, 100%));
       height: 3rem;
+      bottom: -0.1px;
+      background-image: linear-gradient(rgba(247, 239, 200, 0%), rgba(247, 239, 200, 100%));
     }
 
     /* Oval top for yellow container */
-    nav:before {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      background-color: #F7EFC8;
-      width: 100%;
-      border-radius: 50%;
-      top: -3rem;
-      height: 6rem;
-      animation: navBeforeIn 1.0s ease-out;
+    @media (max-width: 50rem) {
+      nav:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        background-color: #F7EFC8;
+        width: 100%;
+        border-radius: 50%;
+        top: -3rem;
+        height: 6rem;
+        animation: navBeforeInMobile 1.0s ease-out;
+      }
     }
 
-    @keyframes navBeforeIn {
+    @media (min-width: 50rem) {
+      nav:before {
+        content: none;
+      }
+    }
+
+    @keyframes navBeforeInMobile {
       0% {
         top: 0;
         height: 0;
@@ -406,7 +508,7 @@
       background-color: #FBE780;
       border: black 0.15rem solid;
       border-bottom: transparent;
-      border-radius: 0.25rem;
+      border-radius: 0;
       animation: poleIn 0.5s ease-out 0.5s;
       animation-fill-mode: both;
     }
@@ -494,13 +596,41 @@
       }
     }
 
+    @media (min-width: 50rem) {
+      .background-circle {
+        content: "";
+        position: fixed;
+        z-index: -1;
+        background-color: #F7EFC8;
+        border-radius: 50%;
+        bottom: -40%;
+        right: -11%;
+        height: 74vw;
+        width: 74vw;
+        animation: backgroundCircleIn 1.5s ease;
+      }
+    }
+
+
+    @keyframes backgroundCircleIn {
+      0% {
+        transform: scale(0.01);
+      }
+      100% {
+        transform: scale(1.0);
+      }
+    }
+
   </style>
 </head>
 
 <body>
   <main>
-    <h1>Hi, I'm Cervon Wong</h1>
-    <h2>Where would you like to go?</h2>
+    <div class="background-circle"></div>
+    <div class="heading-group">
+      <h1>Hi, I'm Cervon Wong</h1>
+      <h2>Where&nbsp;would you&nbsp;like&nbsp;to&nbsp;go?</h2>
+    </div>
     <nav>
       <div class="pole"></div>
       <ul class="signs">
