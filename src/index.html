@@ -394,6 +394,16 @@
       filter: drop-shadow(6px 6px 0px black);
     }
 
+    @media (min-width: 50rem) {
+      a.sign_right:hover {
+        transform: rotate(0deg) translate(-3px, -2px) scale(110%) perspective(6rem) rotateY(-6deg) translate(-3px, -2px);
+      }
+
+      a.sign_left:hover {
+        transform: rotate(0deg) translate(-3px, -2px) scale(110%) perspective(6rem) rotateY(6deg) translate(-3px, -2px);
+      }
+    }
+
     a:active {
       transition: all 0.1s ease-in-out;
       font-variation-settings: "wght" 700;
@@ -535,8 +545,8 @@
       width: 10%;
       position: relative;
       height: 3rem;
-      bottom: -0.1px;
-      background-image: linear-gradient(rgba(247, 239, 200, 0%), rgba(247, 239, 200, 100%));
+      bottom: -1px;
+      background-image: linear-gradient(rgba(247, 239, 200, 0%) 0, rgba(247, 239, 200, 100%) 95%);
     }
 
     /* Oval top for yellow container */
@@ -785,14 +795,14 @@
         circle.animate(
           [{transform: "scale(1.0)"}, {transform: "scale(3.0)"}],
           {duration: 600, iterations: 1, easing: "cubic-bezier(0.60, 0, 1, 1)", fill: "forwards",}
-        ).onfinish = (event) => {
+        ).onfinish = (_) => {
           isAnimating = false;
         };
         isExpanded = true;
       } else {
         if (!isExpanded) return;
         isAnimating = true;
-        var animation = circle.animate(
+        circle.animate(
           [{transform: "scale(3.0)"}, {transform: "scale(1.0)"}],
           {
             duration: 1000,
@@ -801,7 +811,7 @@
             fill: "forwards",
             composite: "replace"
           }
-        ).onfinish = (event) => {
+        ).onfinish = (_) => {
           isAnimating = false;
         };
         isExpanded = false;
