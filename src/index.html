@@ -40,7 +40,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Commissioner:wght@500..800&family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..500,50,1&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Commissioner:wght@500..800&family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..500,50..60,1&display=swap"
     rel="stylesheet">
   <!--  TODO: Use SVGs instead of CDN font for speed and to prevent swap rendering -->
   <link rel="stylesheet"
@@ -256,7 +256,7 @@
     h2 {
       font-family: 'Fraunces', serif;
       font-weight: 500;
-      font-variation-settings: "wght" 500, "SOFT" 50, "WONK" 0;
+      font-variation-settings: "wght" 500, "SOFT" 60, "WONK" 0;
       font-size: 3rem;
       line-height: 1.15;
       text-align: center;
@@ -278,17 +278,17 @@
 
     @keyframes h2In {
       0% {
-        font-variation-settings: "wght" 300, "SOFT" 50, "WONK" 1;
+        font-variation-settings: "wght" 300, "SOFT" 60, "WONK" 1;
         transform: translate(0, 1rem);
         color: rgba(0, 0, 0, 0%);
       }
       20% {
-        font-variation-settings: "wght" 300, "SOFT" 50, "WONK" 1;
+        font-variation-settings: "wght" 300, "SOFT" 60, "WONK" 1;
         transform: translate(0, 1rem);
         color: rgba(0, 0, 0, 0%);
       }
       100% {
-        font-variation-settings: "wght" 500, "SOFT" 50, "WONK" 1;
+        font-variation-settings: "wght" 500, "SOFT" 60, "WONK" 1;
         transform: translate(0, 0);
         color: rgba(0, 0, 0, 100%);
       }
@@ -297,12 +297,12 @@
     @media (min-width: 50rem) {
       @keyframes h2In {
         0% {
-          font-variation-settings: "wght" 300, "SOFT" 50, "WONK" 1;
+          font-variation-settings: "wght" 300, "SOFT" 60, "WONK" 1;
           transform: translate(0, 5rem);
           color: rgba(0, 0, 0, 0%);
         }
         100% {
-          font-variation-settings: "wght" 500, "SOFT" 50, "WONK" 1;
+          font-variation-settings: "wght" 500, "SOFT" 60, "WONK" 1;
           transform: translate(0, 0);
           color: rgba(0, 0, 0, 100%);
         }
@@ -441,8 +441,12 @@
       animation: link5In 1.4s ease-out;
     }
 
+    a.link6 {
+      animation: link6In 1.6s ease-out;
+    }
+
     @media (min-width: 50rem) {
-      a.link1, a.link2, a.link3, a.link4, a.link5 {
+      a.link1, a.link2, a.link3, a.link4, a.link5, a.link6{
         animation-delay: 0.4s;
         animation-fill-mode: backwards;
       }
@@ -534,6 +538,24 @@
       100% {
         /*transform: translate(0, 0) perspective(10rem) rotateY(-8deg) rotateX(3deg);*/
         transform: rotate(-2deg) translate(0, 0);
+        opacity: 1.0;
+      }
+    }
+
+    @keyframes link6In {
+      0% {
+        /*transform: translate(0, 2rem) perspective(100rem) rotateY(0deg) rotateX(0deg);*/
+        transform: rotate(0deg) translate(-1rem, 2rem) scale(90%);
+        opacity: 0.0;
+      }
+      80% {
+        /*transform: translate(0, 2rem) perspective(100rem) rotateY(0deg) rotateX(3deg);*/
+        transform: rotate(0deg) translate(-1rem, 2rem) scale(90%);
+        opacity: 0.0;
+      }
+      100% {
+        /*transform: translate(0, 0) perspective(10rem) rotateY(-8deg) rotateX(3deg);*/
+        transform: rotate(2deg) translate(0, 0);
         opacity: 1.0;
       }
     }
@@ -681,6 +703,11 @@
       animation-iteration-count: infinite;
     }
 
+    .pulse6 {
+      animation: pulse 14s ease-in-out 3.0s;
+      animation-iteration-count: infinite;
+    }
+
     @keyframes pulse {
       0% {
         transform: scale(1);
@@ -777,6 +804,13 @@
             &#xf72d
           </span></a>
         </li>
+        <li class="pulse6"><a class="sign_left link6" href="mailto:hello@cervonwong.com">
+          <span class="sign_text">
+            Email me
+          </span>
+          <span class="sign_icon material-symbols-outlined">
+            &#xf1e6
+          </span></a></li>
       </ul>
     </nav>
   </main>
