@@ -6,4 +6,6 @@ dist
 .cache
 .parcel-cache
 .claude
+.playwright-cli
 docs
+*.png
