@@ -131,7 +131,7 @@
       font-family: 'Fraunces', serif;
       font-weight: 500;
       font-variation-settings: "wght" 420, "SOFT" 100, "WONK" 1;
-      font-size: 1rem;
+      font-size: clamp(1rem, 0.5rem + 1.5vw, 2rem);
       text-align: center;
       margin: 0 1rem 0.2rem;
       animation: h1In 0.8s ease-out;
@@ -140,7 +140,6 @@
 
     @media (min-width: 50rem) {
       h1 {
-        font-size: 1.8vw;
         text-align: left;
         margin: 1rem 0;
       }
@@ -174,7 +173,7 @@
       font-family: 'Fraunces', serif;
       font-weight: 500;
       font-variation-settings: "wght" 420, "SOFT" 100, "WONK" 1;
-      font-size: 3rem;
+      font-size: clamp(2.5rem, 1rem + 5vw, 7rem);
       line-height: 1.15;
       text-align: center;
       margin: 0 1rem 0;
@@ -184,7 +183,6 @@
 
     @media (min-width: 50rem) {
       h2 {
-        font-size: 7vw;
         margin: 0;
         text-align: start;
         animation: h2In 1.2s ease-out;
@@ -250,8 +248,8 @@
       align-items: center;
       font-family: 'Commissioner', sans-serif;
       font-variation-settings: "wght" 500;
-      font-size: 1.2rem;
-      line-height: 1.5rem;
+      font-size: clamp(1rem, 0.8rem + 0.5vw, 1.4rem);
+      line-height: 1.4;
       color: black;
       text-decoration: none;
       padding: 1.5rem 1.2rem;
@@ -472,8 +470,8 @@
 
     .sign_icon.material-symbols-outlined {
       transition: all 0.2s ease-in-out;
-      width: 1.5rem;
-      font-size: 1.5rem;
+      width: clamp(1.2rem, 1rem + 0.4vw, 1.8rem);
+      font-size: clamp(1.2rem, 1rem + 0.4vw, 1.8rem);
       color: #FFCA1B;
       font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 48;
     }
