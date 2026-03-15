@@ -64,7 +64,7 @@
       flex-direction: column;
       align-items: center;
       flex: 1;
-      padding: clamp(1rem, 0.5rem + 2vh, 3rem) 0 0 0;
+      padding: clamp(2rem, 1rem + 3vh, 3rem) 0 0 0;
       width: 100%;
       /*height: 100%;*/
     }
@@ -81,9 +81,15 @@
       width: 100vw;
       align-items: center;
       position: relative;
-      margin-top: clamp(2rem, 1rem + 4vh, 5rem);
+      margin-top: clamp(3rem, 2rem + 5vh, 5rem);
       animation: navIn 1.5s ease-in-out;
       animation-fill-mode: both;
+    }
+
+    @media (max-width: 50rem) {
+      nav {
+        zoom: clamp(1.05, calc(1 + (100vw - 20rem) / 120rem), 1.25);
+      }
     }
 
     @media (min-width: 50rem) {
@@ -174,6 +180,7 @@
       font-variation-settings: "wght" 420, "SOFT" 100, "WONK" 1;
       font-size: clamp(2.5rem, 1rem + 5vw, 7rem);
       line-height: 1.15;
+      text-wrap: balance;
       text-align: center;
       margin: 0 1rem 0;
       animation: h2In 1.0s ease-out;
@@ -227,10 +234,10 @@
       flex-direction: column;
       justify-content: start;
       align-items: center;
-      gap: 0;
+      gap: clamp(0.3rem, 0.15rem + 0.4vw, 0.6rem);
       list-style: none;
       padding: 0;
-      margin: clamp(0.8rem, 0.5rem + 1vw, 1.6rem) 0 clamp(0.4rem, 0.2rem + 0.5vw, 0.8rem) 0;
+      margin: clamp(2.2rem, 1.5rem + 2vw, 2.8rem) 0 clamp(0.4rem, 0.2rem + 0.5vw, 0.8rem) 0;
     }
 
     li {
@@ -276,7 +283,7 @@
     a.sign_right {
       flex-direction: row;
       background-image: url("svg/sign_right_200x74.svg");
-      margin-left: clamp(2rem, 1rem + 6vw, 10rem);
+      margin-left: clamp(3.5rem, 2rem + 10vw, 10rem);
       transform: rotate(-2deg) translate(0, 0);
       animation: signRightIn 0.5s ease-out backwards;
       animation-delay: calc(var(--i) * 0.12s);
@@ -285,7 +292,7 @@
     a.sign_left {
       flex-direction: row-reverse;
       background-image: url("svg/sign_left_200x74.svg");
-      margin-right: clamp(2rem, 1rem + 6vw, 10rem);
+      margin-right: clamp(3.5rem, 2rem + 10vw, 10rem);
       transform: rotate(2deg) translate(0, 0);
       animation: signLeftIn 0.5s ease-out backwards;
       animation-delay: calc(var(--i) * 0.12s);
@@ -458,9 +465,8 @@
       top: -1.3rem;
       height: 1.4rem;
       width: 1.4rem;
-      left: 0;
-      right: 0;
-      margin-left: -0.5rem;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
     .sign_icon.material-symbols-outlined {
@@ -493,6 +499,88 @@
       }
       100% {
         transform: scale(1);
+      }
+    }
+
+    /* Desktop: viewport-relative sizing for zoom-independent layout */
+    @media (min-width: 50rem) {
+      main {
+        padding: 2.5vh 0 0 0;
+      }
+
+      .heading-group {
+        margin: 0 2.5vw 0 2vw;
+      }
+
+      h1 {
+        font-size: 3vw;
+        margin: 1.5vh 0;
+      }
+
+      h2 {
+        font-size: 6vw;
+      }
+
+      nav {
+        top: 18vh;
+        bottom: auto;
+      }
+
+      ul.signs {
+        gap: 1vh;
+        margin: 2vh 0 25vh 0;
+      }
+
+      a {
+        font-size: 1.45vw;
+        padding: 1.2vw 1.3vw;
+        height: 4.2vw;
+        width: 13vw;
+        filter: drop-shadow(0.15vw 0.2vw 0 black);
+      }
+
+      a.sign_right {
+        margin-left: 10vw;
+      }
+
+      a.sign_left {
+        margin-right: 10vw;
+      }
+
+      a.sign_left > span.sign_text {
+        margin-left: 0.7vw;
+      }
+
+      a.sign_right > span.sign_text {
+        margin-right: 0.4vw;
+      }
+
+      .sign_icon.material-symbols-outlined {
+        width: 1.65vw;
+        font-size: 1.65vw;
+      }
+
+      div.pole {
+        width: 0.7vw;
+        top: -1vw;
+        bottom: 0;
+        padding-bottom: 0;
+        border-width: 0.18vw;
+      }
+
+      div.pole:before {
+        height: 1.6vw;
+        width: 1.6vw;
+        top: -1.2vw;
+        border-width: 0.18vw;
+      }
+
+      nav:after {
+        height: 2.5vw;
+      }
+
+      a.sign_right:hover, a.sign_left:hover {
+        filter: drop-shadow(0.4vw 0.4vw 0 black);
       }
     }
 
