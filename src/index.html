@@ -252,9 +252,9 @@
       line-height: 1.4;
       color: black;
       text-decoration: none;
-      padding: 1.5rem 1.2rem;
-      height: 3rem;
-      width: 10rem;
+      padding: clamp(1rem, 0.8rem + 0.5vw, 1.6rem) clamp(0.8rem, 0.5rem + 0.5vw, 1.4rem);
+      height: clamp(2.5rem, 2rem + 1vw, 3.5rem);
+      width: clamp(9rem, 7rem + 4vw, 14rem);
       background-repeat: no-repeat;
       text-align: start;
       background-size: 100% 100%;
@@ -267,17 +267,17 @@
     }
 
     a.sign_left > span.sign_text {
-      margin-left: 1rem;
+      margin-left: clamp(0.5rem, 0.3rem + 0.4vw, 1rem);
     }
 
     a.sign_right > span.sign_text {
-      margin-right: 0.6rem;
+      margin-right: clamp(0.3rem, 0.2rem + 0.3vw, 0.6rem);
     }
 
     a.sign_right {
       flex-direction: row;
       background-image: url("svg/sign_right_200x74.svg");
-      margin-left: 8rem;
+      margin-left: clamp(2rem, 1rem + 6vw, 10rem);
       transform: rotate(-2deg) translate(0, 0);
       animation: signRightIn 0.5s ease-out backwards;
       animation-delay: calc(var(--i) * 0.12s);
@@ -286,7 +286,7 @@
     a.sign_left {
       flex-direction: row-reverse;
       background-image: url("svg/sign_left_200x74.svg");
-      margin-right: 8rem;
+      margin-right: clamp(2rem, 1rem + 6vw, 10rem);
       transform: rotate(2deg) translate(0, 0);
       animation: signLeftIn 0.5s ease-out backwards;
       animation-delay: calc(var(--i) * 0.12s);
